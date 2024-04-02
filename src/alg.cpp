@@ -15,15 +15,15 @@ int countPairs1(int *arr, int len, int value) {
   return summ;
 }
 int countPairs2(int *arr, int len, int value) {
-  int summ = 0;
+  int sum = 0;
   for (int i = 0; i < len; ++i) {
     for (int j = len - 1; j > i; --j) {
       if (value == arr[i] + arr[j]) {
-        summ++;
-      }
+        sum++
+          }
     }
   }
-  return summ;
+  return sum;
 }
 int countPairs3(int *arr, int len, int value) {
   int result = 0;
