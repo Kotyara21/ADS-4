@@ -21,7 +21,7 @@ int countPairs2(int *arr, int len, int value) {
   }
   return summ;
 }
-int countPairs3(int* arr, int len, int value) {
+int countPairs3(int *arr, int len, int value) {
   int result = 0;
   for (int i = 0; i < len - 1; i++) {
     int l_bound = i;
