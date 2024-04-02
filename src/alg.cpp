@@ -4,26 +4,38 @@
 #include <cstdint>
 
 int countPairs1(int *arr, int len, int value) {
-  int summ = 0;
-  for (int i = 0; i < len; ++i) {
-    for (int j = i + 1; j < len; ++j) {
-      if (value == arr[i] + arr[j]) {
-        summ++;
-      }
+    int count = 0;
+    int i = 0;
+    while (i < len) {
+        int j = i + 1;
+        while (j < len) {
+            if ((arr[i] + arr[j]) == value) {
+                count++;
+            }
+            j++;
+        }
+        i++;
     }
-  }
-  return summ;
+    return count;
 }
 int countPairs2(int *arr, int len, int value) {
-  int sum = 0;
-  for (int i = 0; i < len; ++i) {
-    for (int j = len - 1; j > i; --j) {
-      if (value == arr[i] + arr[j]) {
-        sum++;
-          }
+    int count = 0;
+    int endl = len - 1;
+    do {
+        endl = endl - 1;
+    } while (arr[endl] > value);
+    int i = 0;
+    while (i < endl) {
+        int j = endl;
+        while (j > i) {
+            if (arr[j] + arr[i] == value) {
+                count++;
+            }
+            j--;
+        }
+        i++;
     }
-  }
-  return sum;
+    return count;
 }
 int cbinsearch(int *arr, int size, int value) {
     int count = 0;
